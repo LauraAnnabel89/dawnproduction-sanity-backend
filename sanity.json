@@ -1,0 +1,41 @@
+{
+  "root": true,
+  "project": {
+    "name": "Aesop"
+  },
+  "api": {
+    "projectId": "qpu2wjya",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/dashboard",
+    "@sanity/desk-tool",
+    "nyancat-spinner",
+    "@sanity/color-input",
+    "@sanity/vision",
+    "dashboard-widget-notes",
+    "dashboard-widget-document-list"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input-resolver",
+      "path": "./parts/inputResolver.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/overrides.css"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./parts/dashboard.js"
+    }
+  ]
+}
